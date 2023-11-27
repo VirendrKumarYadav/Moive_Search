@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Gallery</title>
+    <style>
+        #gallery-container {
+            text-align: center;
+        }
+
+        #image {
+            max-width: 95%;
+            max-width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery-container">
+        <img id="image"
+            src="https://images.unsplash.com/photo-1695142260208-520c6ce6c061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Image 1">
+        <br>
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+<hr>
+<hr><h1>Question 2</h1>
+<h1>Random Dog Image</h1>
+<div id="dog-image-container">
+    <img id="dog-image" src="" alt="Random Dog">
+</div>
+<button id="new-dog-button">Get New Dog</button>
+
+    <script>
+        // Question 1
+        let img1 = 'https://images.unsplash.com/photo-1695142260208-520c6ce6c061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+        let img2 = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg';
+        let prevBtn = document.querySelector('#prevBtn');
+        let nextBtn = document.querySelector('#nextBtn');
+        let img = document.querySelector('#image');
+        prevBtn.addEventListener('click', () => {
+            img.setAttribute('src', img1);
+        })
+        nextBtn.addEventListener('click', () => {
+            img.setAttribute('src', img2);
+        })
+    //  Question
+    let dogImg=document.querySelector('#dog-image');
+    let newDogBttn=document.querySelector('#new-dog-button');
+
+newDogBttn.addEventListener('click', () => {
+    fetchData()
+});
+async function fetchData(){
+   let res= await fetch('https://dog.ceo/api/breeds/image/random');
+   let  data= await res.json();
+//    console.log(data);
+   dogImg.setAttribute('src',data.message);
+}
+fetchData()
+// Array Function
+
+let details=[
+    {name: 'virendra',age:100},
+    {name: 'kuamr',age:20},
+    {name: 'yadav',age:25},
+    {name: 'Navaneet',age:15},
+]
+
+details.forEach((d)=>{
+    console.log(d.name);
+});
+
+
+
+// map
+let mapedData=details.map(function(data){
+    return data.age+1;
+})
+console.log(mapedData);
+// reduce
+let reduceData=details.reduce(function(ttl,data){
+    return ttl.age-data.age;
+})
+console.log(reduceData);
+// filter
+let filteredData=details.filter(function(data){
+    return data.age>15 && data.age<25;
+})
+
+console.log(filteredData);
+    </script>
+</body>
+
+</html>

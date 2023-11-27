@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.467);
+        } */
+
+        .container_1 {
+            height: 80vh;
+            width: 30%;
+            border: 2px solid rgba(0, 0, 0, 0.48);
+            margin: 30px;
+            border-radius: 5px;
+            padding: 30px;
+            background-color: white;
+            /* display: none; */
+            overflow: scroll;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        li {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .task,
+        #title,
+        .label,
+        .desc {
+            padding: 10px;
+            background-color: antiquewhite;
+            width: 80px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .custom-title,
+        .custom-desc,
+        .custon-date,
+        .custon-label {
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .custon-label {
+            margin-bottom: 80px;
+        }
+
+        #date_board {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: antiquewhite;
+            font-size: large;
+        }
+
+        .main {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            min-height: 100vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .46);
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container_1">
+            <div class="custom-title">
+                <h2><span class="material-symbols-outlined">
+                        title
+                    </span> Title</h2>
+                <p id="title" contenteditable="true"></p>
+            </div>
+            <div class="custom-desc">
+                <h2><span class="material-symbols-outlined">
+                        list
+                    </span> Description</h2>
+                <p class="desc" contenteditable="true"></p>
+            </div>
+            <div class="custon-date">
+                <h2><span class="material-symbols-outlined">
+                        calendar_month
+                    </span> Date</h2>
+                <input type="date" id="date_board">
+            </div>
+            <div class="custon-label">
+                <h2> <span class="material-symbols-outlined">
+                        sell
+                    </span> Labels</h2>
+                <ul>
+                    <li class="li-active" style="background-color: rgb(168, 25, 61);"></li>
+                    <li class="" style="background-color: rgb(79, 204, 37);"></li>
+                    <li class="" style="background-color: rgb(30, 191, 250);"></li>
+                    <li class="" style="background-color: rgb(141, 163, 119);"></li>
+                    <li class="" style="background-color: rgb(153, 117, 189);"></li>
+                    <li class="" style="background-color: rgb(207, 97, 161);"></li>
+                    <li class="" style="background-color: rgb(36, 9, 89);"></li>
+                </ul>
+
+                <div class="label" contenteditable="true">Add Labels</div>
+            </div>
+
+            <div class="tasks">
+                <h2><span class="material-symbols-outlined">
+                        select_check_box
+                    </span> Tasks</h2>
+                <span class="line"></span>
+            </div>
+            <div class="task">Add a Task</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

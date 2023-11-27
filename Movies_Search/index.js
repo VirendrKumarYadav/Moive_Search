@@ -23,13 +23,6 @@ let posters = document.querySelector('.posters');
 async function fetchAPI(searchName, pageNo) {
     let api_data = await fetch(`http://www.omdbapi.com/?apikey=390a6d30&s=${searchName}&page=${pageNo}`);
     let data = await api_data.json();
-    console.log(data.Search);
-    // data.map()
-    console.log(body);
-    // body.style.display = 'none';
-    // bodyCont.style.height=0+'px';
-    // bodyCont.style.width=0+'px';
-
 
     for (let index = 0; index < data.Search.length - 1; index++) {
         let div = document.createElement('div');
@@ -45,7 +38,5 @@ async function fetchAPI(searchName, pageNo) {
         div.innerHTML = crtPoster;
         posters.appendChild(div);
     }
-
-
 
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>⌚Set Alarm⏲️</h1>
+
+        <div class="right">
+
+            <div class="timer_screen">
+                <h3>Set Time</h3>
+                <div class="input_data">
+                    <input type="time" id="timeInput" step="3600" list="times">
+                    <datalist id="times">
+                        <option value="08:00">
+                        <option value="09:00">
+                        <option value="10:00">
+                    </datalist>
+                   
+                     <select name="slc_audio" id="slcAudios">
+                        <option value="">Select Tune</option>
+                        <option value=""><a href="./assets/Audios/over-the-horizon-41499.mp3">over-the-horizon-41499</a></option>
+                        <option value=""><a href="./assets/Audios/ringtone-58761.mp3">ringtone-58761</a></option>
+                        <option value=""><a href="./assets/Audios/wakeup-alarm-tone-21497.mp3">wakeup-alarm-tone-21497</a></option>
+                     </select>
+                </div>
+               
+                 <button id="submitBtn" onclick="submitTime()">Set Time</button>
+        
+            </div>
+        </div>
+      
+    </div>
+    <div class="left"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter/Search Table</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Filter/Search Table</h1>
+        <input id="search" type="text" placeholder="Search for Name ...">
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Country</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>Alex</td>
+                    <td>US</td>
+                </tr>
+                <tr>
+                    <td>Marco</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Maracco</td>
+                </tr>
+                <tr>
+                    <td>Sumit</td>
+                    <td>Japan</td>
+                </tr>
+                <tr>
+                    <td>Shelly</td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Virendra</td>
+                    <td>India</td>
+                </tr>
+                <tr>
+                    <td>Anoop</td>
+                    <td>Surat</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./index.js">
+
+        let tbody = document.createElement('tbody');
+        for (let index = 0; index < 10; index++) {
+
+            let tr = document.createElement('tr');
+            let td_name = document.createElement('td');
+            let td_country = document.createElement('td');
+            td_country.classList.add('country');
+            td_name.classList.add('name');
+            td.td_name.innerText = "virendra"
+            tr.appendChild(td_name);
+            tr.appendChild(td_country);
+            tbody.appendChild(tr);
+        }
+        let cols = document.querySelectorAll('td');
+        cols.filter()
+
+    </script>
+</body>
+
+</html>

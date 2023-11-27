@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #longText {
+        overflow: hidden;
+        max-height: 100px;
+        transition: max-height 0.5s ease;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="longText">
+      This is a long paragraph that you can expand or collapse using the "Read
+      More" button.
+    </p>
+    <button id="readMoreButton">Read More</button>
+  </body>
+  <script>
+    let btn=document.querySelector('#readMoreButton');
+    let para=document.querySelector('#longText');
+    btn.addEventListener('click', ()=>{
+      if(para.style.display=="none"){
+        para.style.display="block";
+      }else{
+        para.style.display="none";
+      }
+    })
+  </script>
+</html>

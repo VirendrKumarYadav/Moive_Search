@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCT4 Test</title>
+    <style>
+        .list {
+            display: none;
+        }
+
+        .showcase {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="cont1">
+        <h1>Question 1.</h1>
+        <button id="toggleButton">Toggle List</button>
+        <ul class="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </main>
+    <hr>
+    <main class="cont2">
+        <h1>GitHub User Search</h1>
+        <input type="text" id="searchInput" placeholder="Enter GitHub username">
+        <button id="searchButton">Search</button>
+        <div id="userInfo">
+            <img id="avatar" alt="User Avatar">
+            <p><strong>Username:</strong> <span id="username"></span></p>
+        </div>
+
+    </main>
+    <script>
+// Question 1
+        let btn = document.querySelector('#toggleButton');
+        let list = document.querySelector('.list');
+        //I
+        // btn.addEventListener('click',(a)=>{
+        //   console.log(a);
+        //        list.style.display = 'block';
+        // })
+
+        // II
+        // btn.addEventListener('click', () => {
+        //     if (list.style.display === "none") {
+        //         // console.log("hello");
+        //         list.style.display = "block";
+        //     } else {
+        //         list.style.display = "none";
+        //     }
+
+        // });
+
+        // III
+
+        btn.addEventListener('click', () => {
+            console.log("hello");
+            list.classList.toggle('showcase');
+        })
+// Question 2
+let username="";
+let input =document.querySelector('#searchInput');
+input.addEventListener('change',()=>{
+   username=input.value;
+//    debounce(fetchListOGitHub,1000);
+});
+
+let search_btn = document.querySelector('#searchButton');
+search_btn.addEventListener('click',()=>{
+    fetchListOGitHub();
+})
+let avtr=document.querySelector('#avatar');
+let uName=document.querySelector('#username');
+async function fetchListOGitHub() {
+    console.log("fetch methd call"+username);
+  let res= await fetch(`https://api.github.com/users/${username}`);
+  let data=await res.json();
+  console.log(data);
+  avtr.setAttribute('src',data.avatar_url);
+  uName.innerText=data.name;
+}
+//  function debounce(fun,timeOut)
+// {
+// let timer;
+// return function(){
+//     if(timer) clearTimeout(timmer);
+//     timer=setTimeout(()=>{
+//      fun();
+//     },timeOut);
+
+// }
+// }
+
+
+
+
+// Q3
+const products = [
+  { name: "Milk", price: 50, discount: 10 }, // 10% discount
+  { name: "Tea", price: 30, discount: 20 }, // 20% discount
+  { name: "Rusk", price: 40, discount: 0 },  // No discount
+  { name: "Cup", price: 60, discount: 15 }, // 15% discount
+];
+// output 20
+let filterData=products.filter(data)
+function data(prod){  
+return prod.discount>0;
+}
+console.log(filterData);
+let totalDiscount;
+function calculateTotalDiscount(products){
+     totalDiscount=0;
+    products.forEach(element => {
+        let dis=element.price*element.discount;
+        totalDiscount += dis/100;
+       
+    });
+}
+calculateTotalDiscount(filterData)
+console.log(totalDiscount);
+
+
+    </script>
+</body>
+
+</html>

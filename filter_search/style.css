@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table,td{
+    padding: 30px;
+    border: 1px solid #457898;
+}
+thead{
+    padding: 30px;
+    border: 1px solid #457898;
+}
+
+thead td{
+    font-weight: bold;
+    font-size: larger;
+    border: 3px solid #b6bdc1;
+    background-color: #457898;
+}
+
+input{
+    width: 300px;
+    padding: 15px;
+    margin-left:45px ;
+}
+h1{
+    text-align: center;
+}
